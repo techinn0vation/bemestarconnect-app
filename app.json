@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "bemestarconnect",
+    "slug": "bemestarconnect",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "",
+    "scheme": "Bem Estar Connect",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./app/assets/images/Logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#121619"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.techinnovation.cardapio",
+      "adaptiveIcon": {
+        "foregroundImage": "",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": ""
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "7ab05761-3069-4925-84ca-6ea3a4e5ae0f"
+      }
+    },
+    "owner": "klirineu",
+    "runtimeVersion": "41.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/7ab05761-3069-4925-84ca-6ea3a4e5ae0f"
+    }
+  }
+}
