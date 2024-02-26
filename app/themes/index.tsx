@@ -17,5 +17,6 @@ export const theme = {
     cinzaEscuro: "#37474F",
     CinzaClaro: "#EEEEEE",
     Preto: "#121619",
+    Opacity: "rgba(0,0,0,0.8)",
   },
 };
