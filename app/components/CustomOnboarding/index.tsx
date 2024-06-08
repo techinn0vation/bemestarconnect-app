@@ -1,16 +1,40 @@
-import { FrameOnboarding, WrapperFrameOnborading } from "./styles";
-import { ImageSourcePropType } from "react-native";
+import React from "react";
 
-interface CustomOnboardingProps {
-  imageSource: ImageSourcePropType;
-}
+import {
+  DescriptionOnboarding,
+  FrameOnboarding,
+  SpaceOnboarding,
+  TitleOnboarding,
+  WrapperOnboarding,
+} from "./styles";
 
-export default function CustomOnboarding({
-  imageSource,
-}: CustomOnboardingProps) {
+import AppIntroSlider from "react-native-app-intro-slider";
+
+import { Slide, slides } from "./slidesOnboarding";
+import { useRouter } from "expo-router";
+
+const CustomOnboarding = () => {
+  const router = useRouter();
+
+  const renderItem = ({ item }: { item: Slide }) => {
+    return (
+      <WrapperOnboarding>
+        <TitleOnboarding>{item.title}</TitleOnboarding>
+        <SpaceOnboarding />
+        <FrameOnboarding resizeMode="contain" source={item.image} />
+        <SpaceOnboarding />
+        <DescriptionOnboarding>{item.description}</DescriptionOnboarding>
+      </WrapperOnboarding>
+    );
+  };
+
+  const onDone = () => {
+    router.replace("/screens/Login");
+  };
+
   return (
-    <WrapperFrameOnborading>
-      <FrameOnboarding resizeMode="stretch" source={imageSource} />
-    </WrapperFrameOnborading>
+    <AppIntroSlider renderItem={renderItem} data={slides} onDone={onDone} />
   );
-}
+};
+
+export default CustomOnboarding;

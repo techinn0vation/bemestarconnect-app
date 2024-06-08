@@ -8,7 +8,7 @@
     "scheme": "Bem Estar Connect",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./app/assets/images/Logo.png",
+      "image": "./app/assets/img/Logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#121619"
     },

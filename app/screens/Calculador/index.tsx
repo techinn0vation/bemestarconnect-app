@@ -1,14 +1,15 @@
-import CustomOnboarding from "../../components/CustomOnboarding";
+import CustomCalculador from "../../components/CustomCalculador";
+
 import {
   ContentLayout,
   WrapperLayout,
 } from "../../layouts/CommonLayout/styles";
 
-export default function Onboarding() {
+export default function Calculador() {
   return (
     <WrapperLayout>
       <ContentLayout>
-        <CustomOnboarding />
+        <CustomCalculador />
       </ContentLayout>
     </WrapperLayout>
   );

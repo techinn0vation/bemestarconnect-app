@@ -11,12 +11,11 @@ export const theme = {
   screenHeight: Dimensions.get("window").height,
   colors: {
     Azul: "#0D99FF",
-    Amarelo: "#FFC727",
-    Branco: "#FFFFFF",
-    AzulAcinzentado: "#22272C",
-    cinzaEscuro: "#37474F",
-    CinzaClaro: "#EEEEEE",
     Preto: "#121619",
-    Opacity: "rgba(0,0,0,0.8)",
+    Amarelo: "#FFC727",
+
+    PretoAzulado: "#263238",
+    Branco: "#FFFFFF",
+    Cinza: "#E0E0E0",
   },
 };

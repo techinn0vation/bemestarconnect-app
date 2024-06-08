@@ -1,9 +1,5 @@
-import OnboardingScreen from "./screens/onboarding";
+import Onboarding from "./screens/Onboarding";
 
 export default function Page() {
-  return (
-    <>
-      <OnboardingScreen />
-    </>
-  );
+  return <Onboarding />;
 }
