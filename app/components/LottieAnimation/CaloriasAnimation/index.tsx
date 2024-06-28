@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import LottieView from "lottie-react-native";
-import { FrameCalorie } from "./styles";
+import { WrapperLottieView } from "./styles";
 
-export const CalorieFire = () => {
+export const CaloriasAnimation = () => {
   const animationRef = useRef<LottieView>(null);
 
   useEffect(() => {
@@ -22,13 +22,11 @@ export const CalorieFire = () => {
     }
   }, []);
   return (
-    <FrameCalorie>
-      <LottieView
-        loop={true}
-        autoPlay={true}
-        ref={animationRef}
-        source={require("..//..//..//assets/Lottie_Json/CalorieFire.json")}
-      />
-    </FrameCalorie>
+    <WrapperLottieView
+      loop={true}
+      autoPlay={true}
+      ref={animationRef}
+      source={require("..//..//..//assets/Lottie_Json/CalorieFire.json")}
+    />
   );
 };

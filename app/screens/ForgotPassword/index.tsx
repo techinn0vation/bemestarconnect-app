@@ -1,15 +1,15 @@
-import CustomLogin from "../../components/CustomLogin";
+import CustomForgotPassword from "../../components/CustomForgotPassword";
 
 import {
   ContentLayout,
   WrapperLayout,
 } from "../../layouts/CommonLayout/styles";
 
-export default function Login() {
+export default function ForgotPassword() {
   return (
     <WrapperLayout>
       <ContentLayout>
-        <CustomLogin />
+        <CustomForgotPassword />
       </ContentLayout>
     </WrapperLayout>
   );

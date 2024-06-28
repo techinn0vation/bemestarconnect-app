@@ -1,6 +1,3 @@
-import { theme } from "../../themes";
-import { useRouter } from "expo-router";
-
 import {
   BlockInputFields,
   ButtonCustomLogin,
@@ -9,6 +6,7 @@ import {
   HandleHideCustomLogin,
   IconHideCustomLogin,
   InnerBlockInputFields,
+  InnerFooterCustomLogin,
   InnerInputField,
   LinkFooterCustomLogin,
   LogoBranding,
@@ -19,6 +17,8 @@ import {
 } from "./styles";
 
 import { useState } from "react";
+import { theme } from "../../themes";
+import { useRouter } from "expo-router";
 
 export default function CustomLogin() {
   // Função para mostrar/esconder senha
@@ -32,7 +32,7 @@ export default function CustomLogin() {
   const router = useRouter();
 
   const handleLogin = () => {
-    router.push("/(app)/screens/Dashboard");
+    router.push("/screens/Dashboard");
   };
 
   return (
@@ -42,9 +42,7 @@ export default function CustomLogin() {
           resizeMode="contain"
           source={require("../../assets/img/Logo.png")}
         />
-
-        <SpaceCustomLogin />
-
+        {/* Bloco de credenciais */}
         <BlockInputFields>
           <InnerBlockInputFields>
             <InnerInputField
@@ -52,9 +50,9 @@ export default function CustomLogin() {
               placeholderTextColor={theme.colors.Cinza}
             />
           </InnerBlockInputFields>
-
+          {/*  */}
           <SpaceCustomLogin />
-
+          {/*  */}
           <InnerBlockInputFields>
             <InnerInputField
               placeholder="Digite sua senha"
@@ -66,26 +64,29 @@ export default function CustomLogin() {
             </HandleHideCustomLogin>
           </InnerBlockInputFields>
         </BlockInputFields>
-
+        {/* Bloco de credenciais */}
+        {/*  */}
         <SpaceCustomLogin />
-
+        {/*  */}
         <ButtonCustomLogin onPress={handleLogin}>
           <TextButtonCustomLogin>entrar</TextButtonCustomLogin>
         </ButtonCustomLogin>
-
+        {/*  */}
         <SpaceCustomLogin />
-
+        {/*  */}
         <FooterCustomLogin>
-          <TextFooterCustomLogin>
-            Ainda não tem uma conta?
-          </TextFooterCustomLogin>
-
-          <LinkFooterCustomLogin href="screens/Calculador">
-            Cadastre-se
-          </LinkFooterCustomLogin>
-          <LinkFooterCustomLogin href="">
-            Esqueceu sua senha?
-          </LinkFooterCustomLogin>
+          <InnerFooterCustomLogin>
+            <TextFooterCustomLogin>
+              Ainda não tem uma conta?
+            </TextFooterCustomLogin>
+            <LinkFooterCustomLogin href="screens/Calculador">Cadastre-se</LinkFooterCustomLogin>
+          </InnerFooterCustomLogin>
+          {/*  */}
+          <InnerFooterCustomLogin>
+            <LinkFooterCustomLogin href="screens/ForgotPassword">
+              Esqueceu a senha?
+            </LinkFooterCustomLogin>
+          </InnerFooterCustomLogin>
         </FooterCustomLogin>
       </ContentCustomLogin>
     </WrapperCustomLogin>

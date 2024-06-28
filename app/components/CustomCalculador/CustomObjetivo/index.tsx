@@ -1,4 +1,4 @@
-import LottieAnimation from "../../LottieAnimation/CaloriasAnimation";
+import { CaloriasAnimation } from "../../LottieAnimation/CaloriasAnimation";
 import { PropsObjetivo } from "./propsObjetivo";
 import {
   BlockCustomObjetivo,
@@ -16,10 +16,8 @@ export default function CustomObjetivo({
   subtitle,
   resultados,
   imageSource,
-  // lottieAnimation,
   onPress,
 }: PropsObjetivo) {
-  const animationSource = require("..//..//..//assets/Lottie_Json/CalorieFire.json");
   return (
     <WrapperCustomObjetivo>
       <FrameCustomObjetivo resizeMode="contain" source={imageSource} />
@@ -32,9 +30,7 @@ export default function CustomObjetivo({
 
         {/*  */}
         <BlockCustomObjetivo>
-          {/* <Calorie /> */}
-          <LottieAnimation source={animationSource} />
-          <SubtitleCustomObjetivo></SubtitleCustomObjetivo>
+          <CaloriasAnimation />
           <SubtitleCustomObjetivo>{resultados}</SubtitleCustomObjetivo>
         </BlockCustomObjetivo>
         <SpaceCustomObjetivo />

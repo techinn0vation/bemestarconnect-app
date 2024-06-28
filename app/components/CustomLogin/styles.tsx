@@ -10,15 +10,19 @@ export const WrapperCustomLogin = styled.ScrollView.attrs({
     flexGrow: 1,
   },
 })`
-  width: 100%;
   padding: ${theme.size(16)};
 `;
 export const ContentCustomLogin = styled.View`
   width: 100%;
   height: auto;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   padding: ${theme.size(10)};
   background: ${theme.colors.PretoAzulado};
-  border-radius: ${theme.size(10)};
+  border-radius: ${theme.size(5)};
 `;
 export const LogoBranding = styled.Image`
   width: 100%;
@@ -31,15 +35,12 @@ export const BlockInputFields = styled.View`
   align-items: center;
 `;
 export const InnerBlockInputFields = styled.View`
-  width: 100%;
-  height: auto;
-
   flex: 1;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 
-  padding: ${theme.size(6)};
+  padding: ${theme.size(6.5)};
 
   border: solid ${theme.colors.Azul} ${theme.size(1.2)};
   border-radius: ${theme.size(5)};
@@ -48,8 +49,6 @@ export const InnerBlockInputFields = styled.View`
   border-left-color: ${theme.colors.Azul};
 `;
 export const InnerInputField = styled.TextInput`
-  width: 100%;
-
   flex: 1;
   flex-direction: row;
   justify-content: center;
@@ -109,13 +108,22 @@ export const FooterCustomLogin = styled.View`
   justify-content: center;
   align-items: center;
 `;
+export const InnerFooterCustomLogin = styled.View`
+  width: 100%;
+  height: auto;
+
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: ${theme.size(3)};
+  align-items: center;
+  margin-bottom: ${theme.size(3)};
+`;
 export const TextFooterCustomLogin = styled.Text`
   color: ${theme.colors.Branco};
   font-size: ${theme.size(14)};
   font-weight: 500;
   line-height: ${theme.size(21)};
   text-align: center;
-  margin-bottom: ${theme.size(3)};
 `;
 export const LinkFooterCustomLogin = styled(Link)`
   color: ${theme.colors.Azul};
@@ -123,6 +131,5 @@ export const LinkFooterCustomLogin = styled(Link)`
   font-weight: 500;
   line-height: ${theme.size(21)};
   text-align: center;
-
   margin-bottom: ${theme.size(14)};
 `;

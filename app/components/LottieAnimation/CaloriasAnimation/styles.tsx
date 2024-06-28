@@ -1,7 +1,13 @@
 import styled from "styled-components/native";
 import { theme } from "../../../themes";
+import LottieView from "lottie-react-native";
 
-export const FrameCalorie = styled.View`
-  width: ${theme.size(50)};
-  height: ${theme.size(50)};
+export const WrapperLottieView = styled(LottieView)`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
+  width: ${theme.size(60)};
+  height: ${theme.size(60)};
+  margin-bottom: ${theme.size(6)};
 `;

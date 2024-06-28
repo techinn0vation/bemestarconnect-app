@@ -13,8 +13,10 @@ export const theme = {
     Azul: "#0D99FF",
     Preto: "#121619",
     Amarelo: "#FFC727",
+    Vermelho: "#EF5350",
 
     PretoAzulado: "#263238",
+    PretoAzuladoClaro: "#3C474C",
     Branco: "#FFFFFF",
     Cinza: "#E0E0E0",
   },

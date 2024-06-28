@@ -11,6 +11,5 @@ export const ContentLayout = styled(LinearGradient).attrs({
   colors: [theme.colors.Preto, theme.colors.Azul],
   start: { x: 0, y: 0.5 },
   end: { x: 0, y: 0 },
-})`
-  flex: 1;
-`;
+  flexGrow: 1,
+})``;

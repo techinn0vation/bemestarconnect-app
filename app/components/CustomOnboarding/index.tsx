@@ -1,40 +1,94 @@
-import React from "react";
+import { Dimensions, ScrollView } from "react-native";
+
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "expo-router";
+import { slides } from "./slidesCustomOnboarding";
 
 import {
-  DescriptionOnboarding,
+  ContentCustomOnboarding,
   FrameOnboarding,
+  ScrollCustomOnboarding,
   SpaceOnboarding,
+  SubTitleOnboarding,
   TitleOnboarding,
-  WrapperOnboarding,
+  WrapperCustomButtons,
+  WrapperCustomOnboarding,
 } from "./styles";
+import CustomButton from "../shared/CustomButton";
 
-import AppIntroSlider from "react-native-app-intro-slider";
+const { width: screenWidth } = Dimensions.get("window");
 
-import { Slide, slides } from "./slidesOnboarding";
-import { useRouter } from "expo-router";
+export default function CustomOnboarding() {
+  const scrollRef = useRef<ScrollView>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-const CustomOnboarding = () => {
-  const router = useRouter();
-
-  const renderItem = ({ item }: { item: Slide }) => {
-    return (
-      <WrapperOnboarding>
-        <TitleOnboarding>{item.title}</TitleOnboarding>
-        <SpaceOnboarding />
-        <FrameOnboarding resizeMode="contain" source={item.image} />
-        <SpaceOnboarding />
-        <DescriptionOnboarding>{item.description}</DescriptionOnboarding>
-      </WrapperOnboarding>
-    );
+  const handleNext = () => {
+    const nextIndex = currentIndex + 1;
+    if (nextIndex < slides.length) {
+      scrollRef.current?.scrollTo({
+        x: nextIndex * screenWidth,
+        animated: true,
+      });
+      setCurrentIndex(nextIndex);
+    }
   };
 
-  const onDone = () => {
-    router.replace("/screens/Login");
+  const handlePrev = () => {
+    const prevIndex = currentIndex - 1;
+    if (prevIndex >= 0) {
+      scrollRef.current?.scrollTo({
+        x: prevIndex * screenWidth,
+        animated: true,
+      });
+      setCurrentIndex(prevIndex);
+    }
+  };
+
+  useEffect(() => {
+    scrollRef.current?.scrollTo({
+      x: currentIndex * screenWidth,
+      animated: true,
+    });
+  }, [currentIndex]);
+
+  // Função para redirecionar usuario
+  const router = useRouter();
+
+  const handleLogin = () => {
+    router.push("/screens/Login");
   };
 
   return (
-    <AppIntroSlider renderItem={renderItem} data={slides} onDone={onDone} />
+    <WrapperCustomOnboarding>
+      <ScrollCustomOnboarding
+        ref={scrollRef}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        snapToInterval={screenWidth}
+        decelerationRate={0.9}
+        pagingEnabled={true}
+      >
+        {slides.map((item, index) => (
+          <ContentCustomOnboarding key={index} style={{ width: screenWidth }}>
+            <FrameOnboarding resizeMode="contain" source={item.imageSlide} />
+            <SpaceOnboarding />
+            <TitleOnboarding>{item.title}</TitleOnboarding>
+            <SpaceOnboarding />
+            <SubTitleOnboarding>{item.subTitle}</SubTitleOnboarding>
+          </ContentCustomOnboarding>
+        ))}
+      </ScrollCustomOnboarding>
+      <WrapperCustomButtons>
+        {currentIndex > 0 && (
+          <CustomButton onPress={handlePrev} text="anterior" />
+        )}
+        <SpaceOnboarding />
+        {currentIndex === slides.length - 1 ? (
+          <CustomButton onPress={handleLogin} text="login" />
+        ) : (
+          <CustomButton onPress={handleNext} text="próximo" />
+        )}
+      </WrapperCustomButtons>
+    </WrapperCustomOnboarding>
   );
-};
-
-export default CustomOnboarding;
+}

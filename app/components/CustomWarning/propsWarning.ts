@@ -1,9 +1,10 @@
 import { ImageSourcePropType } from "react-native";
 
-export interface PropsObjetivo {
+export interface PropsWarning {
   title: string;
   subtitle: string;
-  resultados: string;
+  buttonText: string;
   imageSource?: ImageSourcePropType;
   onPress?: () => void;
+  showButton?: boolean;
 }
