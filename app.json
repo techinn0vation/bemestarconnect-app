@@ -4,7 +4,7 @@
     "slug": "bemestarconnect",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "",
+    "icon": "./app/assets/img/Logo.png",
     "scheme": "Bem Estar Connect",
     "userInterfaceStyle": "automatic",
     "splash": {
