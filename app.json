@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "bemestarconnect",
+    "name": "Bem-estar Connect",
     "slug": "bemestarconnect",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,7 +8,7 @@
     "scheme": "Bem Estar Connect",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./app/assets/img/Logo.png",
+      "image": "./app/assets/images/Logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#121619"
     },
@@ -17,7 +17,7 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.techinnovation.cardapio",
+      "package": "com.inovasoftdigital.bemestarconnect",
       "adaptiveIcon": {
         "foregroundImage": "",
         "backgroundColor": "#ffffff"
@@ -37,7 +37,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "7ab05761-3069-4925-84ca-6ea3a4e5ae0f"
+        "projectId": "ee0d1d03-f1ea-48b8-80df-3ab4dd3d1294"
       }
     },
     "owner": "klirineu",
